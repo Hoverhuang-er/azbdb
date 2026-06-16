@@ -12,7 +12,7 @@ import (
 	"time"
 
 	"github.com/Hoverhuang-er/azbdb/pkg/kv/internal/crdt"
-	"github.com/hoverhuang/mast"
+	"github.com/jrhy/mast"
 	"github.com/minio/blake2b-simd"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

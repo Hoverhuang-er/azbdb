@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/hoverhuang/mast"
+	"github.com/jrhy/mast"
 )
 
 func Example() {

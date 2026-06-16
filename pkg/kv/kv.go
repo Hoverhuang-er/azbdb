@@ -8,7 +8,7 @@
 //
 // # Links
 //
-// * Merkle Search Tree, https://github.com/hoverhuang/mast
+// * Merkle Search Tree, https://github.com/jrhy/mast
 package kv
 
 import (
@@ -28,7 +28,7 @@ import (
 
 	crdtpub "github.com/Hoverhuang-er/azbdb/pkg/kv/crdt"
 	"github.com/Hoverhuang-er/azbdb/pkg/kv/internal/crdt"
-	"github.com/hoverhuang/mast"
+	"github.com/jrhy/mast"
 	"github.com/minio/blake2b-simd"
 )
 

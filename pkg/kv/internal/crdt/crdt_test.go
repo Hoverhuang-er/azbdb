@@ -12,8 +12,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/hoverhuang/mast"
-	"github.com/hoverhuang/mast/persist/file"
+	"github.com/jrhy/mast"
+	"github.com/jrhy/mast/persist/file"
 )
 
 var ctx = context.Background()
