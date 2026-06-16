@@ -6,7 +6,7 @@ require (
 	github.com/Azure/azure-sdk-for-go/sdk/storage/azblob v1.6.3
 	github.com/docopt/docopt-go v0.0.0-20180111231733-ee0de3bc6815
 	github.com/johncgriffin/overflow v0.0.0-20211019200055-46fa312c352c
-	github.com/jrhy/mast v0.1.0
+	github.com/jrhy/mast v1.2.33
 	github.com/mattn/go-sqlite3 v1.14.45
 	github.com/minio/blake2b-simd v0.0.0-20160723061019-3f5f724cb5b1
 	github.com/segmentio/ksuid v1.0.4
@@ -28,9 +28,3 @@ require (
 	golang.org/x/text v0.38.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
-
-replace github.com/davecgh/go-spew => ./internal/third_party/go-spew
-
-replace github.com/docopt/docopt-go => ./internal/third_party/docopt-go
-
-replace github.com/jrhy/mast => ./internal/third_party/mast
