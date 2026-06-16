@@ -5,7 +5,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/hoverhuang/mast"
+	"github.com/jrhy/mast"
 )
 
 // Persist implements the mast.Persist interface for storing and loading

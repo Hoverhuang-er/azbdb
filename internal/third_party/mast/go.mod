@@ -1,4 +1,4 @@
-module github.com/hoverhuang/mast
+module github.com/jrhy/mast
 
 go 1.25.0
 
