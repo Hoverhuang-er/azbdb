@@ -22,7 +22,7 @@ import (
 	"github.com/Hoverhuang-er/azbdb/pkg/kv"
 	"github.com/Hoverhuang-er/azbdb/pkg/kv/crdt"
 	v1proto "github.com/Hoverhuang-er/azbdb/pkg/proto/v1"
-	"github.com/hoverhuang/mast"
+	"github.com/jrhy/mast"
 )
 
 var ErrAZBConstraintNotNull = errors.New("constraint: NOT NULL")

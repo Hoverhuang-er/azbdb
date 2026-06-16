@@ -10,7 +10,7 @@ import (
 	"github.com/Hoverhuang-er/azbdb/internal/azbmetrics"
 	"github.com/Hoverhuang-er/azbdb/pkg/kv"
 	v1proto "github.com/Hoverhuang-er/azbdb/pkg/proto/v1"
-	"github.com/hoverhuang/mast"
+	"github.com/jrhy/mast"
 )
 
 type KV struct {
