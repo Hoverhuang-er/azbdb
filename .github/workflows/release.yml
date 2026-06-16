@@ -1,0 +1,57 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.25'
+
+      - name: Vet
+        run: go vet ./...
+
+      - name: Test
+        run: go test -race ./...
+
+      - name: Install Zig
+        uses: goto-bus-stop/setup-zig@v2
+        with:
+          version: 0.14.0
+
+      - name: Install QEMU
+        run: |
+          sudo apt-get -y update
+          sudo apt-get -y install qemu-user libc6-armhf-cross libc6-arm64-cross libc6-amd64-cross
+
+      - name: Cross-compile extensions
+        run: |
+          mkdir -p release
+
+          cd cmd/azb-sharedlib
+          CGO_ENABLED=1 GOOS=linux GOARCH=arm   CC="zig cc -target arm-linux-gnueabihf"  go generate && mv azb.so ../../release/azb-linux-arm-glibc.sqlite-ext.so
+          CGO_ENABLED=1 GOOS=linux GOARCH=arm64 CC="zig cc -target aarch64-linux-gnu"    go generate && mv azb.so ../../release/azb-linux-arm64-glibc.sqlite-ext.so
+          CGO_ENABLED=1 GOOS=linux GOARCH=amd64 CC="zig cc -target x86_64-linux-gnu"     go generate && mv azb.so ../../release/azb-linux-amd64-glibc.sqlite-ext.so
+          cd ../..
+
+          cd release
+          gzip -9 *.so
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ github.ref_name }}
+          files: release/*.gz
+          generate_release_notes: true
